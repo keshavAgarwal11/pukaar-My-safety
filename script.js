@@ -89,21 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Progress bar animation
-  const progressFill = document.querySelector(".progress-fill")
-  if (progressFill) {
-    const progressObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const progress = progressFill.getAttribute("data-progress")
-          setTimeout(() => {
-            progressFill.style.width = progress + "%"
-          }, 500)
-          progressObserver.unobserve(entry.target)
-        }
-      })
-    })
-    progressObserver.observe(progressFill)
-  }
+
 
   // Animate elements on scroll
   const animateOnScroll = () => {
@@ -174,20 +160,20 @@ document.addEventListener("DOMContentLoaded", () => {
   heroObserver.observe(heroSection)
 
   // Improve mobile experience by adjusting header on scroll
-  let lastScrollTop = 0
-  const header = document.querySelector("header")
+  // let lastScrollTop = 0
+  // const header = document.querySelector("header")
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  // window.addEventListener("scroll", () => {
+  //   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      header.style.transform = "translateY(-100%)"
-    } else {
-      header.style.transform = "translateY(0)"
-    }
+  //   if (scrollTop > lastScrollTop && scrollTop > 100) {
+  //     header.style.transform = "translateY(-100%)"
+  //   } else {
+  //     header.style.transform = "translateY(0)"
+  //   }
 
-    lastScrollTop = scrollTop
-  })
+  //   lastScrollTop = scrollTop
+  // })
 
   // Feature Modal Functionality
   const modal = document.getElementById("feature-modal")
