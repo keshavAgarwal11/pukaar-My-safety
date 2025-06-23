@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         loadingScreen.style.display = "none"
       }, 500)
-    }, 1500)
+    }, 500)
   })
 
   // Dark And Light Mode Toggle
