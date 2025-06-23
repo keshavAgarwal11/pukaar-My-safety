@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KIITHub Fortnite Game - Zombie Escape</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f16;
+      color: #e0f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: #1a1a29;
+      border-radius: 16px;
+      padding: 30px 25px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 0 25px #00ffccaa;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #00ffc3;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    p.description {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #a0dede;
+    }
+
+    .code-container {
+      background: #222b3a;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #00ffcc;
+      user-select: all;
+      margin-bottom: 20px;
+      box-shadow: 0 0 8px #00ffcc77;
+    }
+
+    button.copy-btn {
+      margin-left: 15px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #002522;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 6px #00ffccaa;
+    }
+
+    button.copy-btn:hover {
+      background: #00cca6;
+      box-shadow: 0 0 14px #00ffccdd;
+    }
+
+    a.play-btn {
+      display: block;
+      background-color: #00ffc3;
+      color: #002522;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 15px 0;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #00ffccdd;
+      margin-bottom: 18px;
+      transition: background 0.3s ease;
+    }
+
+    a.play-btn:hover {
+      background-color: #00cca6;
+      box-shadow: 0 0 25px #00ffccff;
+    }
+
+    p.download-text {
+      font-size: 0.95rem;
+      color: #a0dede;
+      margin-bottom: 8px;
+    }
+
+    a.download-link {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    a.download-link:hover {
+      color: #00cca6;
+      text-decoration: underline;
+    }
+
+    p.note {
+      font-size: 0.9rem;
+      color: #7de6d9cc;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    p.disclaimer {
+      font-size: 0.8rem;
+      color: #555a66;
+      margin-top: 25px;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 Play Zombie Escape – Fortnite Map</h1>
+    <p class="description">Survive waves of zombies in this thrilling Fortnite map created by a KIIT student.</p>
+
+    <div class="code-container" title="Click copy button to copy Island Code">
+      <span id="islandCode">5632-5878-1171</span>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <a
+      href="https://www.fortnite.com/@maxxwin/5632-5878-1171?lang=en-US"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="play-btn"
+      >Open Fortnite and Play</a
+    >
+
+    <p class="download-text">
+      Don’t have Fortnite?  
+      <a
+        href="https://www.epicgames.com/fortnite/en-US/download"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="download-link"
+        >Download it here</a
+      >
+    </p>
+
+    <p class="note">If the game does not open automatically, please make sure Fortnite is installed on your device.</p>
+
+    <p class="disclaimer">
+      ⚠️ This is a student-created map using Fortnite Creative. KIITHub is not affiliated with Epic Games and is not responsible for in-game content.
+    </p>
+  </div>
+
+  <script>
+    function copyCode() {
+      const codeText = document.getElementById('islandCode').innerText;
+      navigator.clipboard.writeText(codeText).then(() => {
+        alert('Island Code copied: ' + codeText);
+      }).catch(() => {
+        alert('Failed to copy. Please copy manually.');
+      });
+    }
+  </script>
+</body>
+</html>
