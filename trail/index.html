@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="dark-mode">
     <!-- Loading Screen -->
@@ -118,6 +119,208 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+              <!-- Know Your Rights Section -->
+<section id="know-your-rights" class="rights-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Know Your Rights</h2>
+      <p>Empowering you with knowledge about your legal protections and safety rights</p>
+    </div>
+    
+    <div class="rights-container">
+      <button class="download-pdf-btn">
+        <i class="fas fa-file-pdf"></i> Download All Rights as PDF
+      </button>
+      
+      <div class="rights-accordion">
+        <!-- Physical Safety & Harassment -->
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <span class="accordion-icon">🚨</span>
+            <h3>Physical Safety & Harassment</h3>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Protection from Physical Harassment</h4>
+              </div>
+              <div class="right-law">IPC Section 354</div>
+              <p>Touching, groping, inappropriate gestures in public</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Protection from Stalking</h4>
+              </div>
+              <div class="right-law">IPC Section 354D</div>
+              <p>Repeated following, watching, or showing up at places</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Female Police Officer</h4>
+              </div>
+              <div class="right-law">Police Procedure</div>
+              <p>You can request only a woman cop to record your complaint</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Safety in Public Transport</h4>
+              </div>
+              <div class="right-law">General Right</div>
+              <p>Can refuse unsafe taxi/auto, use emergency services (Dial 112)</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cyber Safety & Digital Protection -->
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <span class="accordion-icon">📱</span>
+            <h3>Cyber Safety & Digital Protection</h3>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Protection from Online Harassment</h4>
+              </div>
+              <div class="right-law">IT Act Sec 66E / 67</div>
+              <p>Misuse of images, obscene messages, blackmail, fake profiles</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Report Cybercrime</h4>
+              </div>
+              <div class="right-law">National Cyber Portal</div>
+              <p>Report incidents at cybercrime.gov.in</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to File Complaint Anonymously</h4>
+              </div>
+              <div class="right-law">Police Rule</div>
+              <p>Complain without revealing identity (esp. for cyber abuse)</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rights for Girls / Teenagers / Minors -->
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <span class="accordion-icon">🧒</span>
+            <h3>Rights for Girls / Teenagers / Minors</h3>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Protection from Sexual Abuse (Minors)</h4>
+              </div>
+              <div class="right-law">POCSO Act</div>
+              <p>Any sexual offence against a person under 18 is punishable</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Protection from Forced/Child Marriage</h4>
+              </div>
+              <div class="right-law">Prohibition of Child Marriage Act</div>
+              <p>No girl under 18 can be married or forced emotionally</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Emotional & Social Protection -->
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <span class="accordion-icon">🧠</span>
+            <h3>Emotional & Social Protection</h3>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Speak Anonymously</h4>
+              </div>
+              <div class="right-law">General Rights</div>
+              <p>Emotional support through NGO/police without public disclosure</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Report Workplace Harassment</h4>
+              </div>
+              <div class="right-law">POSH Act, 2013</div>
+              <p>Protection from teachers, bosses, or seniors behaving inappropriately</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Emergency Tools Rights -->
+        <div class="accordion-item">
+          <button class="accordion-btn">
+            <span class="accordion-icon">🆘</span>
+            <h3>Emergency Tools Rights</h3>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Emergency Helpline</h4>
+              </div>
+              <div class="right-law">General Right</div>
+              <p>Access to 112 (India), 911 (US) or local emergency numbers</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Medical Assistance</h4>
+              </div>
+              <div class="right-law">General Right</div>
+              <p>Immediate medical care after assault without police involvement</p>
+            </div>
+            
+            <div class="right-card">
+              <div class="right-header">
+                <span class="right-icon">⚖️</span>
+                <h4>Right to Shelter</h4>
+              </div>
+              <div class="right-law">General Right</div>
+              <p>Access to women's shelters in dangerous situations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="features" class="features">
         <div class="container">

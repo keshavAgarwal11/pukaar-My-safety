@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     body.classList.add("dark-mode")
   }
-
+                                                                                     
   function toggleTheme() {
     body.classList.toggle("dark-mode")
     const theme = body.classList.contains("dark-mode") ? "dark" : "light"
@@ -521,3 +521,111 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+// Know Your Rights Accordion Functionality
+function initRightsAccordion() {
+  const accordionBtns = document.querySelectorAll('.accordion-btn');
+  
+  accordionBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Close all other accordion items
+      accordionBtns.forEach(otherBtn => {
+        if (otherBtn !== this) {
+          otherBtn.classList.remove('active');
+          const otherContent = otherBtn.nextElementSibling;
+          otherContent.style.maxHeight = null;
+        }
+      });
+      
+      // Toggle current item
+      this.classList.toggle('active');
+      const content = this.nextElementSibling;
+      
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+  
+  // Open first accordion by default
+  if (accordionBtns.length > 0) {
+    accordionBtns[0].classList.add('active');
+    accordionBtns[0].nextElementSibling.style.maxHeight = 
+      accordionBtns[0].nextElementSibling.scrollHeight + 'px';
+  }
+  
+  // PDF download button functionality (placeholder)
+  const downloadBtn = document.querySelector('.download-pdf-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function() {
+      // In a real implementation, this would generate/download a PDF
+      alert('This would generate/download a PDF with all rights information');
+    });
+  }
+}
+
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', initRightsAccordion);
+
+
+
+
+
+
+
+// Add jsPDF library (include this in <head> of index.html)
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+const downloadBtn = document.querySelector('.download-pdf-btn');
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', function() {
+    // Initialize PDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Add title
+    doc.setFontSize(20);
+    doc.setTextColor(108, 92, 231); // Pukaar purple
+    doc.text("Your Legal Rights - Pukaar", 15, 20);
+    
+    // Add content from all accordions
+    let yPosition = 40;
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0); // Black text
+    
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      const title = item.querySelector('h3').textContent;
+      doc.setFont(undefined, 'bold');
+      doc.text(`• ${title}`, 15, yPosition);
+      yPosition += 10;
+      
+      item.querySelectorAll('.right-card').forEach(card => {
+        const right = card.querySelector('h4').textContent;
+        const law = card.querySelector('.right-law').textContent;
+        const desc = card.querySelector('p').textContent;
+        
+        doc.setFont(undefined, 'normal');
+        doc.text(`  ${right} (${law})`, 20, yPosition);
+        yPosition += 7;
+        doc.text(`  - ${desc}`, 20, yPosition);
+        yPosition += 10;
+        
+        // Add new page if needed
+        if (yPosition > 270) {
+          doc.addPage();
+          yPosition = 20;
+        }
+      });
+    });
+    
+    // Save PDF
+    doc.save('Pukaar_Legal_Rights.pdf');
+  });
+}
